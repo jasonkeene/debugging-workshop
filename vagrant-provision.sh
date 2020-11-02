@@ -139,6 +139,10 @@ function install_gdb {
     echo Done Installing gdb
 }
 
+function install_jq {
+    apt-get install -qq --yes jq >&2
+}
+
 function main {
     install_go
     install_delve
@@ -146,6 +150,7 @@ function main {
     install_rr
     install_bpftrace
     install_gdb
+    install_jq
 }
 
 [ "$DEBUG" = "false" ] && exec 2>/dev/null
