@@ -10,3 +10,11 @@ reason. Can you find out why?
   `continue` to the breakpoint. You can then step through the program with
   `next` and inspect state with `print`.
 </details>
+
+<details>
+  <summary>Solution</summary>
+
+  The variable `r` inside the `sqrt` function is being shadowed by an
+  additional declaration in the negative case. We should use the assignment
+  operator `=` vs the declare and assign operator `:=` on line 52.
+</details>

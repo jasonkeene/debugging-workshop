@@ -15,3 +15,11 @@ leak? What is the fix?
   
   Where are these goroutines stuck? Why might they be stuck there?
 </details>
+
+<details>
+  <summary>Solution</summary>
+
+  When making HTTP requests the client needs to read all of the data off the
+  response body before continuing. Otherwise, the connection will remain open
+  and will not be reused for subsequent requests.
+</details>

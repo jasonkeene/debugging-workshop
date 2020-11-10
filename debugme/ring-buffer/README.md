@@ -23,4 +23,13 @@ follow along there.
   also overwritten values that have not been read.
 </details>
 
+<details>
+  <summary>Solution</summary>
+
+  When the writer is able to write farther into the future, past the capacity
+  of the buffer, the write index has effectively lapped the read index. This
+  is not good as that means the data at the existing read index was
+  overwritten. This is caused by
+</details>
+
 [07]: https://github.com/jasonkeene/debugging-workshop/blob/master/exercises/07-automating-delve

@@ -31,3 +31,22 @@ $ dlv core binary core
 
   Once the frame is set look around to see why this panic happened.
 </details>
+
+<details>
+  <summary>Solution</summary>
+
+  If you inspect the `err` value it was set to `nil` yet the panic still happened:
+
+  ```
+  (dlv) p err
+  error(*main.codeError) nil
+  ```
+
+  Isn't that strange? As it turns out this value isn't a true `nil`, it is
+  actually a typed `nil` with the type `*main.codeError`. This additional
+  type information means that when you compare it to `nil` using `err != nil`
+  it will actually be not `nil`.
+
+  The solution here is to change the return type of `resolve` to be the
+  `error` interface.
+</details>

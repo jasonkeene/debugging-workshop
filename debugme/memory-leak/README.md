@@ -12,3 +12,12 @@ should total a few KiB. Why is this taking up so much memory?
   Use pprof to take a memory profile. What lines of code are using the most
   memory? How can they be reduced?
 </details>
+
+<details>
+  <summary>Solution</summary>
+  
+  The original, large rune slice is garbage collected but a copy is made when
+  it is converted to a string. We only use the first few characters of the
+  string when we slice it but the new string points to the same data as the
+  original string and so it can not be garbage collected.
+</details>

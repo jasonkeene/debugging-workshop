@@ -61,3 +61,22 @@ Figure out why this program is deadlocking and what the fix is.
   Sometimes it is easier to figure out the cause of the bug by reproducing it
   with a smaller set of data.
 </details>
+
+<details>
+  <summary>Solution</summary>
+
+  The problem that causes the deadlock is one goroutine attempts to acquire
+  lock A then lock B and another goroutine attempts to do the opposite and
+  acquire lock B then lock A. This causes a deadlock when the first goroutine
+  acquires lock A and the second goroutine acquires lock B since each will be
+  blocked waiting on the other to release their lock before continuing.
+
+  ```
+  (dlv) goroutine 18 frame 6 p indices
+  []int len: 2, cap: 2, [87,3]
+  (dlv) goroutine 19 frame 6 p indices
+  []int len: 2, cap: 2, [3,87]
+  ```
+
+  The solution here is to ensure an ordering of how locks are acquired.
+</details>
