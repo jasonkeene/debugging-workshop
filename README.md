@@ -16,8 +16,8 @@ say:
 
 > I don't know what is wrong with my program but I know how to find out!
 
-In this course, we will be covering several tools that I have found useful in
-understanding Go programs.
+In this course, we will be covering a number of tools that I have found
+useful in understanding Go programs.
 
 ### Before Starting
 
@@ -27,8 +27,8 @@ You will need to clone this repo:
 git clone https://github.com/jasonkeene/debugging-workshop
 ```
 
-There are a few things you should setup on your machine before starting on the
-exercises. You will need to:
+There are a few things you should have setup on your machine before starting
+on the exercises. You will need to:
 
 - [Install Go][install-go]
 - [Install Delve][install-delve]
@@ -57,7 +57,7 @@ You can see how these were installed in the VM by looking at the
 ### Exercises
 
 This workshop is broken down into a series of exercises. We will go through
-these individually during the class.
+these individually during the class:
 
 - [Introduction][00]
 - [Starting a Debugging Session][01]
@@ -70,6 +70,61 @@ these individually during the class.
 - [Deterministic Debugging][08]
 - [pprof][09]
 - [bpftrace][10]
+
+Please ask questions as we work through these exercises! If I went too fast
+over something that needs additional explanation please stop me. Some of the
+later sections build on earlier sections so it is important that we all
+understand the material before moving forward. You can also ask questions
+during the breaks if you prefer.
+
+### Instructors
+
+<div>
+
+<img src="./jason-keene.jpg" width="130" height="130" align="left" />
+
+#### Jason Keene
+
+Instructor - Delve User
+
+Contact: [Slack](https://gophers.slack.com/archives/D1KEZBKD0)
+
+<br clear="left" />
+
+</div>
+
+<div>
+
+<img src="./derek-parker.jpg" width="130" height="130" align="left" />
+
+#### Derek Parker
+
+Instructor - Creator of Delve
+
+Contact: [Slack](https://gophers.slack.com/archives/DQU4ZQW3E)
+
+<br clear="left" />
+
+</div>
+
+<div>
+
+<img src="./warren-fernandes.jpg" width="130" height="130" align="left" />
+
+#### Warren Fernandes
+
+TA
+
+Contact: [Slack](https://gophers.slack.com/archives/DCKBZL41K)
+
+<br clear="left" />
+
+</div>
+
+### Feedback
+
+If you have any feedback about this workshop, the presenters, the content,
+the remote format, etc please let us know by filling out [this form][feedback]!
 
 [bitly]: https://bit.ly/debugging-workshop
 [slack]: https://gophers.slack.com/archives/C01BJJMDMB9
@@ -93,3 +148,5 @@ these individually during the class.
 [08]: https://github.com/jasonkeene/debugging-workshop/blob/master/exercises/08-deterministic-debugging
 [09]: https://github.com/jasonkeene/debugging-workshop/blob/master/exercises/09-pprof
 [10]: https://github.com/jasonkeene/debugging-workshop/blob/master/exercises/10-bpftrace
+
+[feedback]: https://forms.gle/7utCyAqPwMcPBdQJ9
