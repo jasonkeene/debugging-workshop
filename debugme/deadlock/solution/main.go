@@ -24,7 +24,7 @@ var data [size]element
 
 func main() {
 	fmt.Printf("cpus: %d\n", runtime.NumCPU())
-	for i := 0; i < runtime.NumCPU(); i++ {
+	for i := 0; i < max(runtime.NumCPU(), 2); i++ {
 		go increaseTotals(i)
 	}
 	select {}
@@ -84,4 +84,11 @@ func increaseTotal(amount int, indices ...int) {
 			data[i].value += remainder
 		}
 	}
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }

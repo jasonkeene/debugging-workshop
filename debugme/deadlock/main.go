@@ -17,20 +17,20 @@ type element struct {
 	value int
 }
 
-const size = 100
+const size = 10_000
 
 var data [size]element
 
 func main() {
 	fmt.Printf("cpus: %d\n", runtime.NumCPU())
-	for i := 0; i < 2; i++ {
+	for i := 0; i < max(runtime.NumCPU(), 2); i++ {
 		go increaseTotals(i)
 	}
 	select {}
 }
 
 func increaseTotals(goroutineID int) {
-	indices := make([]int, 2)
+	indices := make([]int, 10)
 	for i := 0; ; i++ {
 		seen := make(map[int]struct{}, len(indices))
 		for j := 0; j < len(indices); j++ {
@@ -78,4 +78,11 @@ func increaseTotal(amount int, indices ...int) {
 			data[i].value += remainder
 		}
 	}
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
