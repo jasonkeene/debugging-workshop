@@ -120,7 +120,7 @@ terminal run:
 
 ```
 $ go get github.com/tsliwowicz/go-wrk
-$ go-wrk -c 5 -d 999 -T 1250 http://localhost:1234
+$ go-wrk -c 5 -d 999 -T 1250 http://localhost:12345
 ```
 
 From the debugger terminal hit `Ctrl+c` to stop the process:
