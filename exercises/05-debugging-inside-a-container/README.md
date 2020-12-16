@@ -116,6 +116,16 @@ And then disable this restriction:
 This will only work if you can run privileged containers. Now that yama is
 happy, let's try to attach again:
 
+If you see this problem:
+```
+/dlv attach 1
+could not attach to pid 1: operation not permitted
+```
+run the original container like this:
+```
+docker run --cap-add=SYS_PTRACE -it --rm -p 12345:12345 --name debugme debugme
+```
+and then the attach should work.
 ```
 root@4c74243217d6:/go# /dlv attach 1
 Type 'help' for list of commands.
